@@ -1,0 +1,465 @@
+:root {
+  --bg-pastel: #FFFBF7;
+  --primary-pastel: #6750A4; /* Tono morado Pixel */
+  --pastel-yellow: #F9E2AF;
+  --dark-green: #2a6000;
+  --surface-pastel: #E8DEF8;
+  --surface-hover: #D0BCFF;
+  --text-dark: #1D1B20;
+
+  --surface-card: #F3EDF7; /* Un tono lila muy claro para las tarjetas */
+  --success-pastel: #C4EED0;
+  --info-pastel: #C3E7FF;
+}
+
+/* Desplazamiento suave para toda la página */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Evita que la Navbar cubra los títulos de las secciones */
+}
+
+body {
+  background-color: var(--bg-pastel);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, sans-serif; /* Fuente nativa limpia */
+}
+
+.pixel-brand {
+  color: var(--primary-pastel);
+  letter-spacing: -1px;
+}
+
+.navbar-collapse{
+    margin: 1vh;
+}
+
+.nav-pill {
+  padding: 8px 20px !important;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: var(--text-dark) !important;
+}
+
+.nav-pill:hover, .nav-pill.active {
+  background-color: var(--surface-pastel);
+  color: var(--primary-pastel) !important;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--surface-pastel);
+  color: var(--primary-pastel);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--pastel-yellow);
+  transform: translateY(-3px);
+  color: var(--dark-green);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  background-color: var(--surface-pastel);
+  border-radius: 12px;
+}
+
+/* Sección de landing page */
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.tracking-tight {
+  letter-spacing: -1.5px;
+}
+
+.text-primary-pastel {
+  color: var(--primary-pastel);
+}
+
+.bg-surface-pastel {
+  background-color: var(--surface-pastel);
+}
+
+/* --- Botones Estilo Pixel OS / Material You --- */
+.btn-primary-custom {
+  background-color: var(--primary-pastel);
+  color: #ffffff;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #5A458D; /* Un tono ligeramente más oscuro */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(103, 80, 164, 0.2);
+}
+
+.btn-outline-custom {
+  border: 2px solid var(--surface-hover);
+  background-color: transparent;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--surface-hover);
+  color: var(--primary-pastel);
+  transform: translateY(-2px);
+}
+
+/* --- Elementos Visuales e Imágenes --- */
+.profile-img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid var(--bg-pastel);
+  z-index: 1;
+}
+
+/* Forma orgánica (Blob) animada */
+.blob-shape {
+  width: 380px;
+  height: 380px;
+  z-index: 0;
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+
+/* --- Efectos de Cristal (Glassmorphism) y Transparencia --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 2% 3% 2% 2%;
+  display: flex;
+  align-items: center;
+}
+
+.glass-badge {
+  background: rgba(232, 222, 248, 0.5); /* Tono lavanda pastel con opacidad */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+
+/* Tarjeta flotante animada */
+.floating-badge-a {
+  bottom: 5%;
+  left: 0;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-badge-b {
+  top: -10%;
+  left: 0;
+  z-index: 2;
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.floating-badge-c {
+  top: -4;
+  right: -5%;
+  z-index: 2;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.icon-circle{
+  width: clamp(32px, 2.4vw, 40px);
+  height: clamp(32px, 2.4vw, 40px);
+}
+
+.text-dinamic-size {
+  font-size: clamp(11px, 1.5vw, 15px);
+}
+
+.text-dinamic-header {
+  font-size: clamp(8px, 1.2vw, 12px);
+}
+
+.dinamic-icon-size{
+  font-size: clamp(16px, 2vw, 24px);
+}
+
+/* Responsividad extra para móviles */
+@media (max-width: 991px) {
+  .blob-shape {
+    width: 280px;
+    height: 280px;
+  }
+  .profile-img {
+    width: 240px;
+    height: 240px;
+  }
+  .floating-badge {
+    left: -10px;
+    bottom: -10px;
+  }
+}
+
+/* --- Tarjetas Estilo Pixel (Material You) --- */
+.pixel-card {
+  background-color: var(--surface-card);
+  border-radius: 24px; /* Esquinas muy redondeadas características */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pixel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* --- Iconos y Detalles --- */
+.icon-circle-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.bg-primary-pastel {
+  background-color: var(--primary-pastel);
+}
+
+.bg-success-pastel {
+  background-color: var(--success-pastel);
+}
+
+.bg-info-pastel {
+  background-color: var(--info-pastel);
+}
+
+/* Ajuste de badges para que coincidan con el estilo */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* --- Chips de Habilidades (Estilo Píldora Material) --- */
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: #ffffff; /* Fondo blanco para resaltar sobre la tarjeta lila */
+  border: 1px solid rgba(103, 80, 164, 0.1); /* Borde sutil color primario */
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  cursor: default;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.skill-chip:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--primary-pastel);
+  color: var(--primary-pastel);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+}
+
+/* Estilo para las tecnologías en proceso de aprendizaje */
+.learning-chip {
+  background-color: transparent;
+  border: 1px dashed var(--primary-pastel);
+  color: var(--primary-pastel);
+  box-shadow: none;
+}
+
+.learning-chip:hover {
+  background-color: var(--surface-pastel);
+  border-style: solid;
+}
+
+.dev-icon-style{
+    color: var(--primary-pastel);
+    margin-right: 7px;
+}
+
+/* --- Tarjetas de Proyectos --- */
+.project-card {
+  border-radius: 32px; /* Esquinas tipo Pixel OS amplias */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Área de la imagen del proyecto */
+.project-img-bg {
+  min-height: 300px;
+  border-radius: 32px 0 0 32px;
+}
+
+/* Ajuste para dispositivos móviles (las esquinas cambian cuando se apilan) */
+@media (max-width: 991px) {
+  .project-img-bg {
+    border-radius: 32px 32px 0 0;
+    min-height: 250px;
+  }
+  .flex-lg-row-reverse .project-img-bg {
+    border-radius: 32px 32px 0 0;
+  }
+}
+
+/* Solo escritorio: ajustar los bordes de la tarjeta invertida */
+@media (min-width: 992px) {
+  .flex-lg-row-reverse .project-img-bg {
+    border-radius: 0 32px 32px 0;
+  }
+}
+
+/* --- Etiquetas Glassmorphism (Tecnologías) --- */
+.glass-tag {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.img-project-style{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3vh;
+}
+
+/* --- Carrusel de Certificaciones --- */
+.cert-scroll-container {
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Ocultar scrollbar en navegadores Webkit */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.cert-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.cert-card {
+  flex: 0 0 auto;
+  width: 320px; /* Ancho fijo para las tarjetas */
+  scroll-snap-align: center; /* Alinea la tarjeta al centro al hacer scroll */
+  border-radius: 32px;
+  /* Nuevas propiedades para la animación */
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  transform: scale(0.85); /* Las tarjetas inactivas se ven al 85% de su tamaño */
+}
+
+/* Esta clase la agregaremos dinámicamente con JavaScript */
+.cert-card.active-card {
+  transform: scale(1.05); /* La tarjeta central se agranda al 105% */
+  opacity: 1; /* Opacidad completa */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+.cert-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-carusel-style{
+  font-size: 8vh;
+}
+
+/* Modal Ajustes */
+#certificadoModal .modal-content {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Entradas de Formulario Material You (Pixel OS) --- */
+
+.pixel-input {
+    border: 2px solid #DEE2E6; /* Borde gris sutil por defecto */
+    border-radius: 12px !important; /* Esquinas redondeadas */
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efecto al hacer clic (Focus) */
+.pixel-input:focus {
+    border-color: #6750A4 !important; /* Morado estilo Material You */
+    box-shadow: none !important; /* Quitamos el resplandor por defecto de Bootstrap */
+}
+
+/* Ajustes para la etiqueta flotante (Label) */
+.form-floating > label {
+    padding-left: 1rem;
+    color: #6C757D;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Animación cuando el input está enfocado o tiene texto */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #6750A4; /* El texto del label cambia al color principal */
+    transform: scale(0.85) translateY(-0.9rem) translateX(0.5rem);
+    background-color: #FFFFFF; /* Fondo blanco para cortar la línea del borde */
+    padding: 0 0.4rem; /* Espaciado lateral para que respire el texto */
+    height: auto; /* Ajuste de altura para no tapar el input */
+}
+
+/* Ocultamos el placeholder nativo porque el Label hace su trabajo */
+.form-floating > .form-control::placeholder {
+    color: transparent;
+}
+.form-floating > .form-control:focus::placeholder {
+    color: #ADB5BD; /* Lo mostramos sutilmente solo cuando se hace clic */
+}
