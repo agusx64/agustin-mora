@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Evita que la Navbar cubra los títulos de las secciones */
+  overflow-x: hidden;
 }
 
 body {
