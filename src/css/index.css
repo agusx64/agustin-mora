@@ -22,6 +22,7 @@ body {
   background-color: var(--bg-pastel);
   color: var(--text-dark);
   font-family: system-ui, -apple-system, sans-serif; /* Fuente nativa limpia */
+  overflow-x: hidden;
 }
 
 .pixel-brand {
