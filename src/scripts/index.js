@@ -183,5 +183,75 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveCard();
   }
 
+  // 6. Funcionalidad del Modal de Galería (Brochure y Presentación)
+  const botonesGaleria = document.querySelectorAll('.btn-abrir-galeria');
+  const carouselInner = document.getElementById('galeriaCarouselInner');
+
+  // Define aquí las rutas exactas de las imágenes que exportaste
+  const imagenesGaleria = {
+    brochure: [
+      './public/assets/brochure/Diapositiva1.webp',
+      './public/assets/brochure/Diapositiva2.webp',
+      './public/assets/brochure/Diapositiva3.webp',
+      './public/assets/brochure/Diapositiva4.webp',
+      './public/assets/brochure/Diapositiva5.webp',
+      './public/assets/brochure/Diapositiva6.webp',
+      './public/assets/brochure/Diapositiva7.webp',
+      './public/assets/brochure/Diapositiva8.webp',
+      './public/assets/brochure/Diapositiva9.webp',
+      './public/assets/brochure/Diapositiva10.webp',
+      './public/assets/brochure/Diapositiva11.webp',
+      './public/assets/brochure/Diapositiva12.webp',
+      './public/assets/brochure/Diapositiva13.webp',
+      './public/assets/brochure/Diapositiva14.webp',
+      './public/assets/brochure/Diapositiva15.webp',
+      './public/assets/brochure/Diapositiva16.webp',
+    ],
+    presentacion: [
+      './public/assets/presentacion/image1.png',
+      './public/assets/presentacion/image2.png',
+      './public/assets/presentacion/image3.png',
+      './public/assets/presentacion/image4.png',
+      './public/assets/presentacion/image5.png',
+      './public/assets/presentacion/image6.png',
+      './public/assets/presentacion/image7.png',
+      './public/assets/presentacion/image8.png',
+      './public/assets/presentacion/image9.png',
+      './public/assets/presentacion/image10.png',
+      './public/assets/presentacion/image12.png',
+      './public/assets/presentacion/image13.png',
+      './public/assets/presentacion/image14.png',
+      './public/assets/presentacion/image15.png',
+      './public/assets/presentacion/image16.png',
+      './public/assets/presentacion/image17.png',
+      './public/assets/presentacion/image18.png',
+      './public/assets/presentacion/image19.png',
+      './public/assets/presentacion/image20.png',
+    ]
+  };
+
+  if (botonesGaleria.length > 0 && carouselInner) {
+    botonesGaleria.forEach(boton => {
+      boton.addEventListener('click', function () {
+        const tipoGaleria = this.getAttribute('data-galeria');
+        const imagenes = imagenesGaleria[tipoGaleria];
+
+        // Limpiamos el carrusel antes de abrirlo
+        carouselInner.innerHTML = '';
+
+        // Inyectamos las nuevas imágenes al HTML
+        imagenes.forEach((imgSrc, index) => {
+          const activeClass = index === 0 ? 'active' : ''; // La primera imagen debe tener la clase 'active'
+          const itemHTML = `
+            <div class="carousel-item ${activeClass}">
+              <img src="${imgSrc}" class="d-block w-100" alt="${tipoGaleria} página ${index + 1}" style="object-fit: contain; max-height: 85vh; background-color: #f8f9fa;">
+            </div>
+          `;
+          carouselInner.insertAdjacentHTML('beforeend', itemHTML);
+        });
+      });
+    });
+  }
+
 });
 

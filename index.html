@@ -70,7 +70,7 @@
 
                 <!-- Extracto del CV -->
                 <p class="lead text-muted mb-5 pe-lg-4">
-                    Autodidacta, organizado y con interés por la programación, el desarrollo de software e
+                    Ingeniero en sistemas computacionales recién titulado. Especializado en el desarrollo de software e
                     implementación de soluciones tecnológicas innovadoras. Busco oportunidades para aplicar mis
                     conocimientos y seguir aprendiendo en entornos de desarrollo web y backend.
                 </p>
@@ -342,6 +342,36 @@
         </div>
     </div>
 
+    <!-- Modal para Galería (Brochure / Presentación) -->
+    <div class="modal fade" id="galeriaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content rounded-5 border-0 bg-transparent shadow-lg">
+                <div class="modal-header border-0 position-absolute w-100 z-3" style="top: 0; right: 0;">
+                    <button type="button" class="btn-close bg-white rounded-circle p-2 m-3 shadow" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-0 rounded-5 overflow-hidden bg-white">
+                    <!-- Carrusel de Bootstrap -->
+                    <div id="galeriaCarousel" class="carousel slide" data-bs-theme="dark">
+                        <div class="carousel-inner" id="galeriaCarouselInner">
+                            <!-- Las imágenes se inyectarán dinámicamente con JavaScript -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Sección de Habilidades -->
     <section id="habilidades" class="container py-5 mt-5">
 
@@ -490,7 +520,7 @@
                         <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center bg-white">
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <span class="badge bg-info-pastel text-primary-pastel rounded-pill px-3 py-2">Proyecto
-                                    de Titulación - 2025</span>
+                                    de Titulación - 2026</span>
                             </div>
                             <h3 class="h3 fw-bold text-dark mb-3">Flavorwell - Red Social Culinaria con IA</h3>
                             <p class="text-muted mb-4">
@@ -536,6 +566,8 @@
                             </div>
                             <div>
                                 <a href="https://flavorwell-production.up.railway.app/" class="btn btn-primary-custom rounded-pill px-4 py-2 me-2">Ver Web</a>
+                                <button type="button" class="btn bg-primary-subtle text-primary rounded-pill px-4 py-2 me-2 btn-abrir-galeria" data-bs-toggle="modal" data-bs-target="#galeriaModal" data-galeria="brochure">Ver Brochure</button>
+                                <button type="button" class="btn bg-danger-subtle text-danger rounded-pill px-4 py-2 me-2 btn-abrir-galeria" data-bs-toggle="modal" data-bs-target="#galeriaModal" data-galeria="presentacion">Ver Presentación</button>
                                 <a href="https://github.com/agusx64/Flavorwell_App" class="btn btn-outline-custom rounded-circle"
                                     style="width: 44px; height: 44px; padding: 0; line-height: 40px;"><i
                                         class="bi bi-github"></i></a>
